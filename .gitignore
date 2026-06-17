@@ -14,7 +14,6 @@ brain/.claude/skills/*
 !brain/.claude/skills/process-inbox
 !brain/.claude/skills/review
 !brain/.claude/skills/standup
-!brain/.claude/skills/commit-framework
 
 # macOS
 .DS_Store
