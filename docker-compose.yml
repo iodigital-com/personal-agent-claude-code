@@ -1,0 +1,72 @@
+services:
+  # Runs once on first start to generate searxng/settings.yml from the template
+  searxng-init:
+    image: alpine:latest
+    volumes:
+      - ./searxng:/searxng
+    command: >
+      sh -c "
+        if [ ! -f /searxng/settings.yml ]; then
+          SECRET_KEY=$$(cat /dev/urandom | tr -dc 'a-f0-9' | head -c 64);
+          sed \"s/CHANGE_ME_REPLACED_ON_FIRST_START/$$SECRET_KEY/\" /searxng/settings.yml.example > /searxng/settings.yml;
+          echo 'Generated unique SearXNG secret key.';
+        else
+          echo 'SearXNG settings.yml already exists, skipping.';
+        fi"
+    restart: "no"
+
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    hostname: searxng
+    volumes:
+      - ./searxng:/etc/searxng
+    environment:
+      - SEARXNG_BASE_URL=http://searxng:8080/
+    ports:
+      - "127.0.0.1:9080:8080"
+    networks:
+      - agent-network
+    depends_on:
+      searxng-init:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+  claude-agent:
+    build:
+      context: ./devcontainer
+      args:
+        TZ: ${TZ:-Europe/Amsterdam}
+        CLAUDE_CODE_VERSION: latest
+        GIT_DELTA_VERSION: "0.18.2"
+        ZSH_IN_DOCKER_VERSION: "1.2.0"
+    container_name: personal-agent
+    hostname: personal-agent
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    volumes:
+      - claude-config:/home/node/.claude
+      - commandhistory:/commandhistory
+      - ./brain:/workspace
+      - ./whitelist.local.csv:/usr/local/share/whitelist.local.csv:ro
+    environment:
+      - NODE_OPTIONS=--max-old-space-size=4096
+      - CLAUDE_CONFIG_DIR=/home/node/.claude
+      - POWERLEVEL9K_DISABLE_GITSTATUS=true
+      - SEARXNG_URL=http://searxng:8080
+      - TZ=${TZ:-Europe/Amsterdam}
+    command: /bin/zsh /usr/local/bin/startup.sh
+    networks:
+      - agent-network
+    depends_on:
+      - searxng
+    restart: unless-stopped
+
+networks:
+  agent-network:
+    driver: bridge
+
+volumes:
+  claude-config:
+  commandhistory:

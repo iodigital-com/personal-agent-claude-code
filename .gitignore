@@ -1,0 +1,26 @@
+# Personal Obsidian vault — track only MCP and Claude Code config
+brain/*
+!brain/.mcp.json
+!brain/.claude
+
+# SearXNG generated secret key
+searxng/settings.yml
+
+# Secrets and local customization
+.env
+whitelist.local.csv
+
+# Machine-specific Claude Code settings and installed plugins
+.claude/settings.local.json
+brain/.claude/settings.local.json
+brain/.claude/skills/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "searxng": {
+      "type": "stdio",
+      "command": "/bin/sh",
+      "args": ["./.claude/searxng-mcp.sh"]
+    }
+  }
+}
