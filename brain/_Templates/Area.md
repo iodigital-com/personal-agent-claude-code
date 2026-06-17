@@ -6,7 +6,7 @@ tags: [area/{{domain}}]
 created: {{date}}
 modified: {{date}}
 related: []
-summary: "{{one-sentence description of the standard being maintained in this area}}"
+description: "{{one-sentence description of the standard being maintained in this area}}"
 ---
 
 # {{title}}

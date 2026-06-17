@@ -5,7 +5,7 @@ status: evergreen
 tags: [system/retrieval]
 created: 2026-06-17
 modified: 2026-06-17
-summary: The complete strategy for how an LLM navigates this vault without vector databases. Layers of retrieval, conventions, and reasoning patterns.
+description: The complete strategy for how an LLM navigates this vault without vector databases. Layers of retrieval, conventions, and reasoning patterns.
 ---
 
 # LLM Retrieval Plan
@@ -50,7 +50,7 @@ Each folder has a `README.md` that lists its contents with one-line summaries. W
 
 ## Layer 3 — Frontmatter Scanning (Metadata Layer)
 
-Every note has a `summary:` field in its YAML frontmatter. The summary is:
+Every note has a `description:` field in its YAML frontmatter. The description is:
 - One sentence, self-contained
 - Dense — it captures the note's core claim, not just its topic
 - Written as if explaining to someone who has never seen the note
@@ -60,11 +60,11 @@ Every note has a `summary:` field in its YAML frontmatter. The summary is:
 **Query pattern:**
 1. Find candidate notes from Layer 2
 2. Read only frontmatter of candidates
-3. Select notes whose `summary` matches the query
+3. Select notes whose `description` matches the query
 4. Read those notes in full
 
 **Field priority for quick scanning:**
-1. `summary` — relevance signal
+1. `description` — relevance signal
 2. `status` — prefer `active` and `evergreen` over `archived`
 3. `tags` — confirm domain match
 4. `modified` — prefer recent notes for current context
@@ -138,9 +138,9 @@ Query received
 
 ## Conventions That Enable Retrieval
 
-### The `summary` field is non-negotiable
+### The `description` field is non-negotiable
 
-A note without a summary is invisible to Layer 3 scanning. Every note must have one. The summary should answer: "If I could only read one sentence about this note, what would be most useful?"
+A note without a description is invisible to Layer 3 scanning. Every note must have one. The description should answer: "If I could only read one sentence about this note, what would be most useful?"
 
 Good: `"Inversion is a mental model for finding the right answer by reasoning backwards from failure."`
 Bad: `"Notes about a mental model."`
@@ -156,7 +156,7 @@ Bad: `"Notes about a mental model."`
 
 ### Tags enable domain filtering
 
-Before reading summaries, filter by tag to narrow the candidate set. Tags follow the schema `domain/subtopic` — e.g., `learning/writing`, `health/sleep`, `project/launch`.
+Before reading descriptions, filter by tag to narrow the candidate set. Tags follow the schema `domain/subtopic` — e.g., `learning/writing`, `health/sleep`, `project/launch`.
 
 ### Folder READMEs are always current
 
@@ -185,13 +185,13 @@ A MOC that links to archived or deleted notes is noise. During weekly review, ch
 ## Maintenance Protocol
 
 This retrieval system degrades when:
-1. Notes lack summaries
+1. Notes lack descriptions
 2. Folder READMEs are not updated
 3. MOCs have dead links
 4. Too many notes sit in `Inbox/` unprocessed
 
 **Weekly task (5 minutes):**
 - [ ] Process Inbox
-- [ ] Add summaries to any notes that lack them
+- [ ] Add descriptions to any notes that lack them
 - [ ] Update folder READMEs if notes were added
 - [ ] Prune dead links in MOCs used this week

@@ -1,7 +1,7 @@
 ---
 title: Projects Index
 type: system
-summary: Index of all active projects. A project has a defined outcome and a real or implied deadline. When it's done, it moves to Archives.
+description: Index of all active projects. A project has a defined outcome and a real or implied deadline. When it's done, it moves to Archives.
 ---
 
 # Projects

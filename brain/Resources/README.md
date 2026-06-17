@@ -1,7 +1,7 @@
 ---
 title: Resources Index
 type: system
-summary: Index of reference material and evergreen knowledge. Notes here are meant to last — they capture what is true or useful beyond any single project.
+description: Index of reference material and evergreen knowledge. Notes here are meant to last — they capture what is true or useful beyond any single project.
 ---
 
 # Resources

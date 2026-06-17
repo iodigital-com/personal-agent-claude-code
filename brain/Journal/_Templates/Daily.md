@@ -6,7 +6,7 @@ tags: [journal/daily]
 created: {{date:YYYY-MM-DD}}
 modified: {{date:YYYY-MM-DD}}
 week: "[[{{date:YYYY-[W]WW}}]]"
-summary: "Daily note for {{date:YYYY-MM-DD}}."
+description: "Daily note for {{date:YYYY-MM-DD}}."
 ---
 
 # {{date:dddd, MMMM D, YYYY}}

@@ -6,7 +6,7 @@ tags: [journal/weekly]
 created: {{date:YYYY-MM-DD}}
 modified: {{date:YYYY-MM-DD}}
 month: "[[{{date:YYYY-MM}}]]"
-summary: "Weekly review for {{date:YYYY-[W]WW}}. Captures wins, blockers, reflections, and next week's priorities."
+description: "Weekly review for {{date:YYYY-[W]WW}}. Captures wins, blockers, reflections, and next week's priorities."
 ---
 
 # Week {{date:WW}}, {{date:YYYY}} — {{date:MMM D}} to {{date:MMM D, YYYY}}

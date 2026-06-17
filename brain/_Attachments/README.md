@@ -1,7 +1,7 @@
 ---
 title: Attachments
 type: system
-summary: Media storage — images, PDFs, screenshots. Files here are referenced by notes elsewhere. Not indexed for LLM retrieval.
+description: Media storage — images, PDFs, screenshots. Files here are referenced by notes elsewhere. Not indexed for LLM retrieval.
 ---
 
 # Attachments

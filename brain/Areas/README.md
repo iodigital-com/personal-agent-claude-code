@@ -1,7 +1,7 @@
 ---
 title: Areas Index
 type: system
-summary: Index of all ongoing areas of responsibility. Areas have no end date — they are maintained, not completed.
+description: Index of all ongoing areas of responsibility. Areas have no end date — they are maintained, not completed.
 ---
 
 # Areas

@@ -7,7 +7,7 @@ created: {{date}}
 modified: {{date}}
 due: {{due-date}}
 related: []
-summary: "{{one-sentence outcome — what does 'done' look like?}}"
+description: "{{one-sentence outcome — what does 'done' look like?}}"
 ---
 
 # {{title}}

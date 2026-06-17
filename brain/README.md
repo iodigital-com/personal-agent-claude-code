@@ -1,7 +1,7 @@
 ---
 title: Second Brain — Home
 type: system
-summary: Root orientation file. Start here to understand the vault layout, conventions, and how to navigate.
+description: Root orientation file. Start here to understand the vault layout, conventions, and how to navigate.
 ---
 
 # Second Brain
@@ -52,11 +52,11 @@ tags: [domain/subtopic]
 created: YYYY-MM-DD
 modified: YYYY-MM-DD
 related: ["[[Note A]]", "[[Note B]]"]
-summary: "One sentence — what this note is about, written for quick scanning."
+description: "One sentence — what this note is about, written for quick scanning."
 ---
 ```
 
-The `summary` field is the single most important field for LLM retrieval. It must be dense and self-contained.
+The `description` field is the single most important field for LLM retrieval. It must be dense and self-contained.
 
 ### Naming Conventions
 - Notes: `Title Case With Spaces.md`
@@ -79,7 +79,7 @@ See `_System/LLM-Retrieval-Plan.md` for the full strategy. Short version:
 
 1. Read `MOC/Home.md` to find the relevant topic cluster
 2. Read the topic MOC to find candidate notes
-3. Scan frontmatter `summary` fields before reading full bodies
+3. Scan frontmatter `description` fields before reading full bodies
 4. Prefer `status: active` and `status: evergreen` notes
 5. Check `Journal/` for recent temporal context
 6. Follow `related:` links to adjacent notes

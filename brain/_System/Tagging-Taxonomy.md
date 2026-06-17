@@ -5,7 +5,7 @@ status: evergreen
 tags: [system/conventions]
 created: 2026-06-17
 modified: 2026-06-17
-summary: The complete tag hierarchy for this vault. All notes must use tags from this taxonomy or extend it here first.
+description: The complete tag hierarchy for this vault. All notes must use tags from this taxonomy or extend it here first.
 ---
 
 # Tagging Taxonomy
@@ -83,7 +83,7 @@ reference
 1. Use the most specific tag that applies
 2. Use no more than 3-4 tags per note — if you need more, the note is probably two notes
 3. Tags are for filtering and clustering, not for comprehensive categorisation
-4. The `summary` field does the semantic heavy lifting — tags are for structural grouping
+4. The `description:` field does the semantic heavy lifting — tags are for structural grouping
 
 ---
 

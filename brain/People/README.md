@@ -1,7 +1,7 @@
 ---
 title: People Index
 type: system
-summary: Index of all relationship notes. One note per person, containing context, history, and meeting logs.
+description: Index of all relationship notes. One note per person, containing context, history, and meeting logs.
 ---
 
 # People

@@ -7,7 +7,7 @@ created: {{date}}
 modified: {{date}}
 attendees: ["[[]]"]
 related: []
-summary: "{{one-sentence summary of what this meeting was about and what was decided}}"
+description: "{{one-sentence summary of what this meeting was about and what was decided}}"
 ---
 
 # {{date}} — {{topic}}

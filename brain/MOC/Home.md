@@ -5,7 +5,7 @@ status: active
 tags: [navigation]
 created: 2026-06-17
 modified: 2026-06-17
-summary: Master Map of Content. The single entry point for navigating all topics in this brain. Always read this first when exploring.
+description: Master Map of Content. The single entry point for navigating all topics in this brain. Always read this first when exploring.
 ---
 
 # Home — Map of Content

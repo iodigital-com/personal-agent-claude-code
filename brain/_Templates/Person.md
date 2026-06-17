@@ -6,7 +6,7 @@ tags: [people/{{context}}]
 created: {{date}}
 modified: {{date}}
 related: []
-summary: "{{one-sentence description of who this person is and how they relate to you}}"
+description: "{{one-sentence description of who this person is and how they relate to you}}"
 ---
 
 # {{First Last}}

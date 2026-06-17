@@ -5,7 +5,7 @@ status: active
 tags: []
 created: {{date}}
 modified: {{date}}
-summary: ""
+description: ""
 ---
 
 # {{title}}

@@ -9,7 +9,7 @@ source: "{{url}}"
 author: "{{author}}"
 read-date: {{date}}
 related: []
-summary: "{{one-sentence summary of the article's main argument or insight}}"
+description: "{{one-sentence summary of the article's main argument or insight}}"
 ---
 
 # {{article title}}

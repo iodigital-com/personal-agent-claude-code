@@ -1,7 +1,7 @@
 ---
 title: Templates Index
 type: system
-summary: Index of all note templates. Copy from here; do not edit originals.
+description: Index of all note templates. Copy from here; do not edit originals.
 ---
 
 # Templates

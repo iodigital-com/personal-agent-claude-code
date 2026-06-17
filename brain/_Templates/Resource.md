@@ -7,7 +7,7 @@ created: {{date}}
 modified: {{date}}
 source: ""
 related: []
-summary: "{{one-sentence description of what this resource is and why it's useful}}"
+description: "{{one-sentence description of what this resource is and why it's useful}}"
 ---
 
 # {{title}}

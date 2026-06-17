@@ -7,7 +7,7 @@ created: {{date}}
 modified: {{date}}
 origin: "{{who developed or popularised this?}}"
 related: []
-summary: "{{one-sentence description of what this model is and when to apply it}}"
+description: "{{one-sentence description of what this model is and when to apply it}}"
 ---
 
 # {{model name}}

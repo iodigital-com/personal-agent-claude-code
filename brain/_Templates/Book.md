@@ -9,7 +9,7 @@ author: "{{author}}"
 read-date: {{date}}
 rating: /5
 related: []
-summary: "{{one-sentence summary of the book's core contribution to your thinking}}"
+description: "{{one-sentence summary of the book's core contribution to your thinking}}"
 ---
 
 # {{book title}}

@@ -1,7 +1,7 @@
 ---
 title: Inbox
 type: system
-summary: Landing zone for unprocessed captures. Anything goes here first — thoughts, links, ideas, tasks, questions. Process weekly.
+description: Landing zone for unprocessed captures. Anything goes here first — thoughts, links, ideas, tasks, questions. Process weekly.
 ---
 
 # Inbox

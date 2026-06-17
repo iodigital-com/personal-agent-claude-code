@@ -5,7 +5,7 @@ status: active
 tags: [journal/monthly]
 created: {{date:YYYY-MM-DD}}
 modified: {{date:YYYY-MM-DD}}
-summary: "Monthly reflection for {{date:MMMM YYYY}}. High-level review of projects, areas, values, and direction."
+description: "Monthly reflection for {{date:MMMM YYYY}}. High-level review of projects, areas, values, and direction."
 ---
 
 # {{date:MMMM YYYY}}

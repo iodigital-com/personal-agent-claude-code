@@ -10,6 +10,10 @@ whitelist.local.csv
 brain/.claude/settings.local.json
 brain/.claude/skills/*
 !brain/.claude/skills/onboarding
+!brain/.claude/skills/capture
+!brain/.claude/skills/process-inbox
+!brain/.claude/skills/review
+!brain/.claude/skills/standup
 
 # macOS
 .DS_Store

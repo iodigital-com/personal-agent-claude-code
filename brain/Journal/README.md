@@ -1,7 +1,7 @@
 ---
 title: Journal Index
 type: system
-summary: Index of all time-based journal entries. Contains daily notes, weekly reviews, and monthly reflections. Most recent entries are highest priority for LLM context.
+description: Index of all time-based journal entries. Contains daily notes, weekly reviews, and monthly reflections. Most recent entries are highest priority for LLM context.
 ---
 
 # Journal

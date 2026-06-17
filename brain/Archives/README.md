@@ -1,7 +1,7 @@
 ---
 title: Archives Index
 type: system
-summary: Completed, paused, and inactive items. Nothing is deleted — it moves here. Organised by original folder.
+description: Completed, paused, and inactive items. Nothing is deleted — it moves here. Organised by original folder.
 ---
 
 # Archives

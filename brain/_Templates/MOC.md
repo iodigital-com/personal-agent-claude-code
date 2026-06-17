@@ -7,7 +7,7 @@ created: {{date}}
 modified: {{date}}
 parent: "[[MOC/Home]]"
 related: []
-summary: "Map of Content for {{topic}}. Aggregates all notes related to this topic for quick navigation."
+description: "Map of Content for {{topic}}. Aggregates all notes related to this topic for quick navigation."
 ---
 
 # MOC — {{Topic}}
