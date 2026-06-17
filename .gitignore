@@ -1,8 +1,3 @@
-# Personal Obsidian vault — track only MCP and Claude Code config
-brain/*
-!brain/.mcp.json
-!brain/.claude
-
 # SearXNG generated secret key
 searxng/settings.yml
 

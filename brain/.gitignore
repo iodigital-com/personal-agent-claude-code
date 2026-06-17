@@ -1,0 +1,49 @@
+# Obsidian workspace state (machine-specific, not shared)
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/plugins/*/data.json
+
+# Obsidian trash
+.trash/
+
+# macOS
+.DS_Store
+
+# User content — new notes created after cloning the template.
+# Already-tracked template files (README.md, _Template.md, etc.) are
+# unaffected by these patterns: git never untracks committed files.
+
+# Inbox — new notes dropped in
+Inbox/*.md
+!Inbox/README.md
+!Inbox/_Template.md
+
+# Journal — daily/weekly/monthly entries and year subdirs
+Journal/*.md
+Journal/[0-9]*/
+!Journal/README.md
+
+# Area, Project, People notes
+Areas/*.md
+!Areas/README.md
+Projects/*.md
+!Projects/README.md
+People/*.md
+!People/README.md
+
+# MOC topics
+MOC/Topics/*.md
+
+# Resource notes
+Resources/Articles/*.md
+Resources/Books/*.md
+Resources/Mental Models/*.md
+Resources/Reference/*.md
+
+# Archive content
+Archives/**/*.md
+!Archives/README.md
+
+# Attachments (images, PDFs, etc.)
+_Attachments/*
+!_Attachments/README.md
