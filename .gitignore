@@ -8,7 +8,8 @@ whitelist.local.csv
 # Machine-specific Claude Code settings and installed plugins
 .claude/settings.local.json
 brain/.claude/settings.local.json
-brain/.claude/skills/
+brain/.claude/skills/*
+!brain/.claude/skills/onboarding
 
 # macOS
 .DS_Store
