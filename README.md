@@ -25,20 +25,31 @@ cd ~/personal-agent-framework
 
 Or download and unzip it — no git required.
 
-### 2. Start the containers
+### 2. Add your Bonzai API key
 
 ```bash
-docker compose up -d --build
+cp .env.example .env
 ```
 
-That's it. On first start, Docker will:
-- Build the Claude Code agent image
-- Generate a unique secret key for your SearXNG instance
-- Start both services
+Open `.env` and set your key:
 
-### 3. Add the `pa` alias to your shell
+```
+ANTHROPIC_AUTH_TOKEN=your-bonzai-api-key-here
+```
 
-See [Alias setup](#alias-setup) below. Once added, just type `pa` to launch your agent.
+### 3. Start the agent
+
+**macOS / Linux:**
+```bash
+./start-personal-agent.sh
+```
+
+**Windows (PowerShell):**
+```powershell
+.\start-personal-agent.ps1
+```
+
+On first start, Docker will build the Claude Code agent image and generate a unique secret key for your SearXNG instance. After that, Claude Code launches automatically inside the container.
 
 ---
 
@@ -54,86 +65,16 @@ Any notes Claude creates or edits inside the container are instantly visible in 
 
 ---
 
-## Alias setup
-
-The alias starts the containers if they're not running, then drops you into Claude Code with your Bonzai key.
-
-Store your Bonzai key in a file so it stays out of your shell config:
-
-```bash
-echo "YOUR-BONZAI-KEY-HERE" > ~/.anthropic_api_key
-chmod 600 ~/.anthropic_api_key
-```
-
-Then add the alias for your shell:
-
-### Fish
-
-Add to `~/.config/fish/config.fish`:
-
-```fish
-function pa
-    set -l PROJECT_DIR ~/personal-agent-framework
-    set -l API_KEY (cat ~/.anthropic_api_key 2>/dev/null)
-
-    if test -z "$API_KEY"
-        echo "Error: add your Bonzai key to ~/.anthropic_api_key"
-        return 1
-    end
-
-    if not docker ps --format "{{.Names}}" | grep -q "^personal-agent\$"
-        echo "Starting Personal Agent..."
-        docker compose -f $PROJECT_DIR/docker-compose.yml up -d
-        sleep 8
-    end
-
-    docker exec -it personal-agent /bin/zsh -c "ANTHROPIC_AUTH_TOKEN=$API_KEY claude"
-end
-
-alias personal-agent=pa
-```
-
-Reload: `source ~/.config/fish/config.fish`
-
-### Zsh / Bash
-
-Add to `~/.zshrc` or `~/.bashrc`:
-
-```bash
-pa() {
-    local PROJECT_DIR=~/personal-agent-framework
-    local API_KEY
-    API_KEY=$(cat ~/.anthropic_api_key 2>/dev/null)
-
-    if [ -z "$API_KEY" ]; then
-        echo "Error: add your Bonzai key to ~/.anthropic_api_key"
-        return 1
-    fi
-
-    if ! docker ps --format '{{.Names}}' | grep -q '^personal-agent$'; then
-        echo "Starting Personal Agent..."
-        docker compose -f "$PROJECT_DIR/docker-compose.yml" up -d
-        sleep 8
-    fi
-
-    docker exec -it personal-agent /bin/zsh -c "ANTHROPIC_AUTH_TOKEN=$API_KEY claude"
-}
-
-alias personal-agent=pa
-```
-
-Reload: `source ~/.zshrc`
-
----
-
 ## Project structure
 
 ```
 personal-agent-framework/
 ├── brain/                      # Your Obsidian vault — open this in Obsidian
+├── start-personal-agent.sh     # Start script for macOS / Linux
+├── start-personal-agent.ps1    # Start script for Windows (PowerShell)
 ├── docker-compose.yml          # Orchestrates the agent + search containers
 ├── whitelist.local.csv         # Extra domains/IPs to allow through the firewall
-├── .env.example                # Optional: copy to .env to change timezone
+├── .env.example                # Copy to .env and add your Bonzai API key
 ├── devcontainer/
 │   ├── Dockerfile              # Based on the official Anthropic Claude Code devcontainer
 │   ├── init-firewall.sh        # Firewall (reads whitelist.local.csv)
@@ -177,10 +118,10 @@ Claude has a built-in `web_search` tool that routes through the SearXNG containe
 
 ## Changing the timezone
 
-Create a `.env` file in the project root:
+Add `TZ` to your `.env` file (which you already created in setup):
 
 ```bash
-echo "TZ=America/New_York" > .env
+echo "TZ=America/New_York" >> .env
 ```
 
 Then restart:
@@ -194,8 +135,11 @@ docker compose up -d
 ## Useful commands
 
 ```bash
-# Start containers (also done automatically by the alias)
-docker compose up -d
+# Start agent (macOS / Linux)
+./start-personal-agent.sh
+
+# Start agent (Windows PowerShell)
+.\start-personal-agent.ps1
 
 # Stop everything
 docker compose down
