@@ -1,0 +1,4 @@
+# Ensure shell scripts always use LF line endings (never CRLF) on Windows clones
+*.sh        text eol=lf
+*.js        text eol=lf
+Dockerfile  text eol=lf
