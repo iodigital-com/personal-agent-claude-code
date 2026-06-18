@@ -24,6 +24,6 @@ if ($token) {
         claude-agent `
         zsh -c "ANTHROPIC_AUTH_TOKEN=$token claude --dangerously-skip-permissions; exec zsh"
 } else {
-    Write-Warning "ANTHROPIC_AUTH_TOKEN not set in .env — launching shell without starting Claude."
+    Write-Warning "ANTHROPIC_AUTH_TOKEN not set in .env - launching shell without starting Claude."
     docker compose exec claude-agent zsh
 }
